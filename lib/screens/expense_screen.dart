@@ -20,13 +20,11 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
     loadData();
   }
 
-  // ===== LOAD DB =====
   void loadData() async {
     danhSach = await DBHelper.instance.getAll();
     setState(() {});
   }
 
-  // ===== THÊM =====
   void them() async {
     final expense = Expense(
       noiDung: noiDungCtrl.text,
@@ -42,7 +40,6 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
     ghiChuCtrl.clear();
   }
 
-  // ===== XÓA =====
   void xoa(int id) async {
     await DBHelper.instance.delete(id);
     loadData();

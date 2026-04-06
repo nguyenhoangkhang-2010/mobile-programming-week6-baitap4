@@ -36,8 +36,6 @@ class DBHelper {
     ''');
   }
 
-  // ===== CRUD =====
-
   Future<int> insert(Expense expense) async {
     final db = await instance.database;
     return await db.insert('expenses', expense.toMap());
